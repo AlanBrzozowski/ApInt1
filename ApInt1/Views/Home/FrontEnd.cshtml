@@ -1,0 +1,142 @@
+﻿@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "FrontEnd";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="~/Scripts/main.js"></script>
+
+
+
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo-wrapper">
+                <p>Logo</p>
+            </div>
+            <div class="logo-description">
+                <p>Lorem ipsum Lorem ipsum Lorem ipsum</p>
+            </div>
+        </div>
+        <div class="menu-wrapper">
+            <ul>
+                <li id="home"><a href="FrontEnd.cshtml">Home</a></li>
+                <li id="about-us"><a href="FrontEnd.cshtml#about-us-section">O nas</a></li>
+                <li><a href="ligi.html">Ligi</a></li>
+                <li><a href="zawodnicy.html">Zawodnicy</a></li>
+                <li><a href="stadiony.html">Stadiony</a></li>
+                <li id="contact"><a href="index.html#contact-section">Kontakt</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="main-slider">
+        <div style="background-image: url('../images/main_photo.jpg');" class="slider-wrapper">
+            <div class="container">
+                <div class="content-wrapper">
+                    <h1>Lorem Ipsum Lorem Ipsum</h1>
+                    <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem <br> port titor tincidunt. Consecte adipiscing elit. Fusce at justo eget lorem <br> port titor tincidunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-down-wrapper">
+            <div id="down-about" class="arrow-down"><img src="images/arrow_grey.png" alt="arrow down"></div>
+        </div>
+    </section>
+
+    <section id="about-us-section" class="about-us">
+        <div class="container">
+            <h2>O nas</h2>
+            <p class="description-title dot-after">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt. Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt. Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt. Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt.</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt. Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt. Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt. Lorem ipsum dolor sit amet, consecte adipiscing elit. Fusce at justo eget lorem port titor tincidunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-down-wrapper">
+            <div id="down-search" class="arrow-down"><img src="images/arrow_grey.png" alt="arrow down"></div>
+        </div>
+    </section>
+
+
+    <section id="contact-section" class="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p class="description-title dot-after">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+            <div class="contact-form-wrapper">
+                <form>
+                    <div class="half-wrapper">
+                        <input name="name" type="text" placeholder="Imię*">
+                        <input name="mail" type="text" placeholder="E-mail*">
+                    </div>
+                    <input name="subject" type="text" placeholder="Temat">
+                    <textarea name="message" placeholder="Wiadomość..."></textarea>
+                    <div class="button-wrapper">
+                        <button>Wyślij</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="arrow-down-wrapper">
+            <div id="down-footer" class="arrow-down"><img src="images/arrow_grey.png" alt="arrow down"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="top-footer">
+            <h2>Zostaw nam swojego maila aby być na bieżąco</h2>
+            <div class="newsletter-wrapper">
+                <form>
+                    <input type="text" placeholder="Wpisz swój e-mail">
+                    <button>Wyślij</button>
+                </form>
+            </div>
+            <p class="form-description">Lorem ipsum Lorem ipsum Lorem ipsum</p>
+        </div>
+        <div class="bottom-wrapper">
+            <div class="blue-footer">
+                <div class="container">
+                    <div class="contact-data phone">
+                        <p>+48 xxx xxx xxx</p>
+                    </div>
+                    <div class="contact-data mail">
+                        <p><a href="mailto:test@test.com">test@test.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="black-footer">
+                <div class="container">
+                    <div class="rights-wrapper">
+                        <p>Lorem ipsum | All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
