@@ -30,12 +30,12 @@
         </div>
         <div class="menu-wrapper">
             <ul>
-                <li id="home">@Html.ActionLink("Home", "O_Nas", "Home", null, new { @class = "page-scroll" })</li>
-                <li id="about-us">@Html.ActionLink("O nas", "O_Nas", "Home", null, new { @class = "page-scroll" })</li>
-                <li>@Html.ActionLink("Ligi", "Ligi", "Home", null, new { @class = "page-scroll" })</li>
-                <li>@Html.ActionLink("Zawodnicy", "Zawodnicy", "Home", null, new { @class = "page-scroll" })</li>
-                <li>@Html.ActionLink("Stadiony", "Stadiony", "Home", null, new { @class = "page-scroll" })</li>
-                <li id="contact">@Html.ActionLink("Kontakt", "O_Nas", "Home", null, new { @class = "page-scroll" })</li>
+                <li id="home">@Html.ActionLink("Home", "O_Nas", "Home")</li>
+                <li id="about-us">@Html.ActionLink("O Nas", "O_Nas", "Home", null, null, "about-us-section", null, null)</li>
+                <li>@Html.ActionLink("Ligi", "Ligi", "Home")</li>
+                <li>@Html.ActionLink("Zawodnicy", "Zawodnicy", "Home")</li>
+                <li>@Html.ActionLink("Stadiony", "Stadiony", "Home")</li>
+                <li id="contact">@Html.ActionLink("Kontakt", "O_Nas", "Home", null, null, "contact-section", null, null)</li>
             </ul>
         </div>
     </header>
