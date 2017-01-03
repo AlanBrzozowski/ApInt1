@@ -16,7 +16,7 @@ namespace ApInt1
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "FrontEnd", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "O_Nas", id = UrlParameter.Optional }
             );
         }
     }

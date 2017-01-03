@@ -27,7 +27,32 @@ namespace ApInt1.Controllers
             return View();
         }
 
-        public ActionResult FrontEnd()
+        public ActionResult Ligi()
+        {
+            return View();
+        }
+
+        public ActionResult Stadiony()
+        {
+            return View();
+        }
+
+        public ActionResult Zawodnicy()
+        {
+            return View();
+        }
+
+        public ActionResult Tabela()
+        {
+            return View();
+        }
+
+        public ActionResult Terminarz()
+        {
+            return View();
+        }
+
+        public ActionResult O_Nas()
         {
             return View();
         }

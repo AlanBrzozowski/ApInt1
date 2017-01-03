@@ -273,7 +273,12 @@
     <Content Include="images\mail_icon.png" />
     <Content Include="images\main_photo.jpg" />
     <Content Include="images\phone_icon.png" />
-    <Content Include="images\player.jpg" />
+    <Content Include="images\player1.jpg" />
+    <Content Include="images\player2.jpg" />
+    <Content Include="images\player3.jpg" />
+    <Content Include="images\player4.jpg" />
+    <Content Include="images\player5.jpg" />
+    <Content Include="images\player6.jpg" />
     <Content Include="images\stadion.jpg" />
     <Content Include="RugbyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -348,7 +353,13 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\FrontEnd.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Home\O_Nas.cshtml" />
+    <Content Include="Views\Home\Ligi.cshtml" />
+    <Content Include="Views\Home\Stadiony.cshtml" />
+    <Content Include="Views\Home\Zawodnicy.cshtml" />
+    <Content Include="Views\Home\Tabela.cshtml" />
+    <Content Include="Views\Home\Terminarz.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
