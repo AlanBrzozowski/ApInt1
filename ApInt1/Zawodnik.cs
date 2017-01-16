@@ -39,11 +39,9 @@ public partial class Zawodnik
 
     public string KRAJ { get; set; }
 
-    public byte[] ZDJECIA { get; set; }
 
 
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
     public virtual ICollection<Sklad_na_mecz> Sklad_na_mecz { get; set; }
 

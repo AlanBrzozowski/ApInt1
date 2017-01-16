@@ -256,6 +256,24 @@
     <Compile Include="Typ_zdarzenia.cs">
       <DependentUpon>RugbyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>UserdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserdbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserdbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserdbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserdbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Zawodnik.cs">
       <DependentUpon>RugbyModel.tt</DependentUpon>
     </Compile>
@@ -264,6 +282,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Rugby.mdf" />
+    <Content Include="App_Data\Rugby_log.ldf">
+      <DependentUpon>Rugby.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Userdb.mdf" />
+    <Content Include="App_Data\Userdb_log.ldf">
+      <DependentUpon>Userdb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\main.css" />
@@ -323,6 +349,16 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="UserdbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+      <LastGenOutput>UserdbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="UserdbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+      <LastGenOutput>UserdbModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -351,10 +387,17 @@
     <Content Include="Views\Zawodnik\Edit.cshtml" />
     <Content Include="Views\Zawodnik\Delete.cshtml" />
     <Content Include="Views\Zawodnik\List.cshtml" />
+    <EntityDeploy Include="UserdbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserdbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="UserdbModel.edmx.diagram">
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\AfterLogin.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

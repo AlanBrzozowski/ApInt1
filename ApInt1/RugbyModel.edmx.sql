@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/10/2017 11:11:27
--- Generated from EDMX file: C:\Users\I3\Desktop\SZKOŁA\AI\ApInt1\ApInt1\RugbyModel.edmx
+-- Date Created: 01/13/2017 16:12:01
+-- Generated from EDMX file: C:\Users\I3\Desktop\SZKOŁA\GitHub\ApInt1\ApInt1\RugbyModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [RugbyDB];
+USE [Rugby];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,50 +17,50 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_Gospodarz]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Mecz] DROP CONSTRAINT [FK_Gospodarz];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Gość]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Mecz] DROP CONSTRAINT [FK_Gość];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Relationship_3]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Zdarzenie] DROP CONSTRAINT [FK_Relationship_3];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Relationship_4]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Zdarzenie] DROP CONSTRAINT [FK_Relationship_4];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Relationship_5]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Zdarzenie] DROP CONSTRAINT [FK_Relationship_5];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Relationship_7]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Mecz] DROP CONSTRAINT [FK_Relationship_7];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Sedzia_na_mecz]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Sedzia_na_mecz] DROP CONSTRAINT [FK_Sedzia_na_mecz];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Sedzia_na_mecz2]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Sedzia_na_mecz] DROP CONSTRAINT [FK_Sedzia_na_mecz2];
-GO
 IF OBJECT_ID(N'[dbo].[FK_Sedzia_na_mecz3]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Sedzia_na_mecz] DROP CONSTRAINT [FK_Sedzia_na_mecz3];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Sezon_rogrywki]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Sezon_rogrywki] DROP CONSTRAINT [FK_Sezon_rogrywki];
+IF OBJECT_ID(N'[dbo].[FK_Gospodarz]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Meczs] DROP CONSTRAINT [FK_Gospodarz];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Sezon_rogrywki2]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Sezon_rogrywki] DROP CONSTRAINT [FK_Sezon_rogrywki2];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Sklad_na_mecz]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Sklad_na_mecz] DROP CONSTRAINT [FK_Sklad_na_mecz];
-GO
-IF OBJECT_ID(N'[dbo].[FK_Sklad_na_mecz2]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Sklad_na_mecz] DROP CONSTRAINT [FK_Sklad_na_mecz2];
+IF OBJECT_ID(N'[dbo].[FK_Gość]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Meczs] DROP CONSTRAINT [FK_Gość];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Sklad_na_mecz3]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Sklad_na_mecz] DROP CONSTRAINT [FK_Sklad_na_mecz3];
 GO
+IF OBJECT_ID(N'[dbo].[FK_Relationship_3]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Zdarzenies] DROP CONSTRAINT [FK_Relationship_3];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Relationship_7]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Meczs] DROP CONSTRAINT [FK_Relationship_7];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Sedzia_na_mecz2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Sedzia_na_mecz] DROP CONSTRAINT [FK_Sedzia_na_mecz2];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Sklad_na_mecz2]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Sklad_na_mecz] DROP CONSTRAINT [FK_Sklad_na_mecz2];
+GO
 IF OBJECT_ID(N'[dbo].[FK_Sklad_na_mecz4]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Sklad_na_mecz] DROP CONSTRAINT [FK_Sklad_na_mecz4];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Sedzia_na_mecz]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Sedzia_na_mecz] DROP CONSTRAINT [FK_Sedzia_na_mecz];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Sklad_na_mecz]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Sklad_na_mecz] DROP CONSTRAINT [FK_Sklad_na_mecz];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Relationship_5]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Zdarzenies] DROP CONSTRAINT [FK_Relationship_5];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Relationship_4]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Zdarzenies] DROP CONSTRAINT [FK_Relationship_4];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Sezon_rogrywki_KLUB]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Sezon_rogrywki] DROP CONSTRAINT [FK_Sezon_rogrywki_KLUB];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Sezon_rogrywki_Sezon]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Sezon_rogrywki] DROP CONSTRAINT [FK_Sezon_rogrywki_Sezon];
 GO
 
 -- --------------------------------------------------
@@ -70,41 +70,41 @@ GO
 IF OBJECT_ID(N'[dbo].[Funkcja_sedziowska]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Funkcja_sedziowska];
 GO
-IF OBJECT_ID(N'[dbo].[KLUB]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[KLUB];
+IF OBJECT_ID(N'[dbo].[KLUBs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KLUBs];
 GO
-IF OBJECT_ID(N'[dbo].[Mecz]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Mecz];
+IF OBJECT_ID(N'[dbo].[Meczs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Meczs];
 GO
 IF OBJECT_ID(N'[dbo].[Rodzaj_pozycji]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Rodzaj_pozycji];
 GO
-IF OBJECT_ID(N'[dbo].[Sedzia]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Sedzia];
+IF OBJECT_ID(N'[dbo].[Sedzias]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Sedzias];
 GO
 IF OBJECT_ID(N'[dbo].[Sedzia_na_mecz]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Sedzia_na_mecz];
 GO
-IF OBJECT_ID(N'[dbo].[Sezon]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Sezon];
-GO
-IF OBJECT_ID(N'[dbo].[Sezon_rogrywki]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Sezon_rogrywki];
+IF OBJECT_ID(N'[dbo].[Sezons]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Sezons];
 GO
 IF OBJECT_ID(N'[dbo].[Sklad_na_mecz]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Sklad_na_mecz];
 GO
-IF OBJECT_ID(N'[dbo].[Stadion]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Stadion];
+IF OBJECT_ID(N'[dbo].[Stadions]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Stadions];
 GO
 IF OBJECT_ID(N'[dbo].[Typ_zdarzenia]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Typ_zdarzenia];
 GO
-IF OBJECT_ID(N'[dbo].[Zawodnik]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Zawodnik];
+IF OBJECT_ID(N'[dbo].[Zawodniks]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Zawodniks];
 GO
-IF OBJECT_ID(N'[dbo].[Zdarzenie]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Zdarzenie];
+IF OBJECT_ID(N'[dbo].[Zdarzenies]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Zdarzenies];
+GO
+IF OBJECT_ID(N'[dbo].[Sezon_rogrywki]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Sezon_rogrywki];
 GO
 
 -- --------------------------------------------------
