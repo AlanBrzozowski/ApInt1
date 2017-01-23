@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RugbyModelStoreContainer" CdmEntityContainer="RugbyEntities">
+    <EntitySetMapping Name="Funkcja_sedziowska">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Funkcja_sedziowska)">
+        <MappingFragment StoreEntitySet="Funkcja_sedziowska">
+          <ScalarProperty Name="ID_FUNKCJI" ColumnName="ID_FUNKCJI" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KLUBs">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.KLUB)">
+        <MappingFragment StoreEntitySet="KLUBs">
+          <ScalarProperty Name="ID_KLUB" ColumnName="ID_KLUB" />
+          <ScalarProperty Name="NAZWA_KLUBU" ColumnName="NAZWA_KLUBU" />
+          <ScalarProperty Name="ROK_ZALOZENIA" ColumnName="ROK_ZALOZENIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meczs">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Mecz)">
+        <MappingFragment StoreEntitySet="Meczs">
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_KLUB" ColumnName="ID_KLUB" />
+          <ScalarProperty Name="ID_STADIONU" ColumnName="ID_STADIONU" />
+          <ScalarProperty Name="KLU_ID_KLUB" ColumnName="KLU_ID_KLUB" />
+          <ScalarProperty Name="DATA_MECZU" ColumnName="DATA_MECZU" />
+          <ScalarProperty Name="MIEJSCOWOSC" ColumnName="MIEJSCOWOSC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rodzaj_pozycji">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Rodzaj_pozycji)">
+        <MappingFragment StoreEntitySet="Rodzaj_pozycji">
+          <ScalarProperty Name="ID_POZYCJI" ColumnName="ID_POZYCJI" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sedzias">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sedzia)">
+        <MappingFragment StoreEntitySet="Sedzias">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="WIEK" ColumnName="WIEK" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+          <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sedzia_na_mecz">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sedzia_na_mecz)">
+        <MappingFragment StoreEntitySet="Sedzia_na_mecz">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_FUNKCJI" ColumnName="ID_FUNKCJI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sezons">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sezon)">
+        <MappingFragment StoreEntitySet="Sezons">
+          <ScalarProperty Name="ID_SEZONU" ColumnName="ID_SEZONU" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sklad_na_mecz">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sklad_na_mecz)">
+        <MappingFragment StoreEntitySet="Sklad_na_mecz">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_KLUB" ColumnName="ID_KLUB" />
+          <ScalarProperty Name="ID_POZYCJI" ColumnName="ID_POZYCJI" />
+          <ScalarProperty Name="NUMER" ColumnName="NUMER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stadions">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Stadion)">
+        <MappingFragment StoreEntitySet="Stadions">
+          <ScalarProperty Name="ID_STADIONU" ColumnName="ID_STADIONU" />
+          <ScalarProperty Name="NAZWA_STADIONU" ColumnName="NAZWA_STADIONU" />
+          <ScalarProperty Name="ROK_WYBUDOWANIA" ColumnName="ROK_WYBUDOWANIA" />
+          <ScalarProperty Name="POJEMNOSC" ColumnName="POJEMNOSC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Typ_zdarzenia">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Typ_zdarzenia)">
+        <MappingFragment StoreEntitySet="Typ_zdarzenia">
+          <ScalarProperty Name="ID_TYPU_ZDARZENIA" ColumnName="ID_TYPU_ZDARZENIA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zawodniks">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Zawodnik)">
+        <MappingFragment StoreEntitySet="Zawodniks">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="WIEK" ColumnName="WIEK" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+          <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zdarzenies">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Zdarzenie)">
+        <MappingFragment StoreEntitySet="Zdarzenies">
+          <ScalarProperty Name="ID_ZDARZENIA" ColumnName="ID_ZDARZENIA" />
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_TYPU_ZDARZENIA" ColumnName="ID_TYPU_ZDARZENIA" />
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="CZAS" ColumnName="CZAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Sezon_rogrywki" TypeName="RugbyModel.Sezon_rogrywki" StoreEntitySet="Sezon_rogrywki">
+      <EndProperty Name="KLUB">
+        <ScalarProperty Name="ID_KLUB" ColumnName="KLUBs_ID_KLUB" />
+      </EndProperty>
+      <EndProperty Name="Sezon">
+        <ScalarProperty Name="ID_SEZONU" ColumnName="Sezons_ID_SEZONU" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

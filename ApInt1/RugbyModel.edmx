@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RugbyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RugbyModelStoreContainer">
+    <EntitySet Name="Funkcja_sedziowska" EntityType="RugbyModel.Store.Funkcja_sedziowska" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KLUBs" EntityType="RugbyModel.Store.KLUBs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Meczs" EntityType="RugbyModel.Store.Meczs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rodzaj_pozycji" EntityType="RugbyModel.Store.Rodzaj_pozycji" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sedzias" EntityType="RugbyModel.Store.Sedzias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sedzia_na_mecz" EntityType="RugbyModel.Store.Sedzia_na_mecz" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sezons" EntityType="RugbyModel.Store.Sezons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sklad_na_mecz" EntityType="RugbyModel.Store.Sklad_na_mecz" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stadions" EntityType="RugbyModel.Store.Stadions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Typ_zdarzenia" EntityType="RugbyModel.Store.Typ_zdarzenia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Zawodniks" EntityType="RugbyModel.Store.Zawodniks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Zdarzenies" EntityType="RugbyModel.Store.Zdarzenies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sezon_rogrywki" EntityType="RugbyModel.Store.Sezon_rogrywki" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Sedzia_na_mecz3" Association="RugbyModel.Store.FK_Sedzia_na_mecz3">
+      <End Role="Funkcja_sedziowska" EntitySet="Funkcja_sedziowska" />
+      <End Role="Sedzia_na_mecz" EntitySet="Sedzia_na_mecz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gospodarz" Association="RugbyModel.Store.FK_Gospodarz">
+      <End Role="KLUB" EntitySet="KLUBs" />
+      <End Role="Mecz" EntitySet="Meczs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gość" Association="RugbyModel.Store.FK_Gość">
+      <End Role="KLUB" EntitySet="KLUBs" />
+      <End Role="Mecz" EntitySet="Meczs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sklad_na_mecz3" Association="RugbyModel.Store.FK_Sklad_na_mecz3">
+      <End Role="KLUB" EntitySet="KLUBs" />
+      <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relationship_3" Association="RugbyModel.Store.FK_Relationship_3">
+      <End Role="Mecz" EntitySet="Meczs" />
+      <End Role="Zdarzenie" EntitySet="Zdarzenies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relationship_7" Association="RugbyModel.Store.FK_Relationship_7">
+      <End Role="Stadion" EntitySet="Stadions" />
+      <End Role="Mecz" EntitySet="Meczs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sedzia_na_mecz2" Association="RugbyModel.Store.FK_Sedzia_na_mecz2">
+      <End Role="Mecz" EntitySet="Meczs" />
+      <End Role="Sedzia_na_mecz" EntitySet="Sedzia_na_mecz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sklad_na_mecz2" Association="RugbyModel.Store.FK_Sklad_na_mecz2">
+      <End Role="Mecz" EntitySet="Meczs" />
+      <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sklad_na_mecz4" Association="RugbyModel.Store.FK_Sklad_na_mecz4">
+      <End Role="Rodzaj_pozycji" EntitySet="Rodzaj_pozycji" />
+      <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sedzia_na_mecz" Association="RugbyModel.Store.FK_Sedzia_na_mecz">
+      <End Role="Sedzia" EntitySet="Sedzias" />
+      <End Role="Sedzia_na_mecz" EntitySet="Sedzia_na_mecz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sklad_na_mecz" Association="RugbyModel.Store.FK_Sklad_na_mecz">
+      <End Role="Zawodnik" EntitySet="Zawodniks" />
+      <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relationship_5" Association="RugbyModel.Store.FK_Relationship_5">
+      <End Role="Typ_zdarzenia" EntitySet="Typ_zdarzenia" />
+      <End Role="Zdarzenie" EntitySet="Zdarzenies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relationship_4" Association="RugbyModel.Store.FK_Relationship_4">
+      <End Role="Zawodnik" EntitySet="Zawodniks" />
+      <End Role="Zdarzenie" EntitySet="Zdarzenies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sezon_rogrywki_KLUB" Association="RugbyModel.Store.FK_Sezon_rogrywki_KLUB">
+      <End Role="KLUB" EntitySet="KLUBs" />
+      <End Role="Sezon_rogrywki" EntitySet="Sezon_rogrywki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sezon_rogrywki_Sezon" Association="RugbyModel.Store.FK_Sezon_rogrywki_Sezon">
+      <End Role="Sezon" EntitySet="Sezons" />
+      <End Role="Sezon_rogrywki" EntitySet="Sezon_rogrywki" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Funkcja_sedziowska">
+    <Key>
+      <PropertyRef Name="ID_FUNKCJI" />
+    </Key>
+    <Property Name="ID_FUNKCJI" Type="int" Nullable="false" />
+    <Property Name="NAZWA" Type="varchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="KLUBs">
+    <Key>
+      <PropertyRef Name="ID_KLUB" />
+    </Key>
+    <Property Name="ID_KLUB" Type="int" Nullable="false" />
+    <Property Name="NAZWA_KLUBU" Type="varchar" Nullable="true" MaxLength="256" />
+    <Property Name="ROK_ZALOZENIA" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Meczs">
+    <Key>
+      <PropertyRef Name="ID_MECZ" />
+    </Key>
+    <Property Name="ID_MECZ" Type="int" Nullable="false" />
+    <Property Name="ID_KLUB" Type="int" Nullable="false" />
+    <Property Name="ID_STADIONU" Type="int" Nullable="true" />
+    <Property Name="KLU_ID_KLUB" Type="int" Nullable="true" />
+    <Property Name="DATA_MECZU" Type="datetime" Nullable="true" />
+    <Property Name="MIEJSCOWOSC" Type="varchar" Nullable="true" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Rodzaj_pozycji">
+    <Key>
+      <PropertyRef Name="ID_POZYCJI" />
+    </Key>
+    <Property Name="ID_POZYCJI" Type="int" Nullable="false" />
+    <Property Name="NAZWA" Type="varchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sedzias">
+    <Key>
+      <PropertyRef Name="ID_OSOBA" />
+    </Key>
+    <Property Name="ID_OSOBA" Type="int" Nullable="false" />
+    <Property Name="WIEK" Type="int" Nullable="true" />
+    <Property Name="NAZWISKO" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="IMIE" Type="char" Nullable="true" MaxLength="50" />
+    <Property Name="KRAJ" Type="char" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sedzia_na_mecz">
+    <Key>
+      <PropertyRef Name="ID_OSOBA" />
+      <PropertyRef Name="ID_MECZ" />
+      <PropertyRef Name="ID_FUNKCJI" />
+    </Key>
+    <Property Name="ID_OSOBA" Type="int" Nullable="false" />
+    <Property Name="ID_MECZ" Type="int" Nullable="false" />
+    <Property Name="ID_FUNKCJI" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sezons">
+    <Key>
+      <PropertyRef Name="ID_SEZONU" />
+    </Key>
+    <Property Name="ID_SEZONU" Type="int" Nullable="false" />
+    <Property Name="NAZWA" Type="varchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sklad_na_mecz">
+    <Key>
+      <PropertyRef Name="ID_OSOBA" />
+      <PropertyRef Name="ID_MECZ" />
+      <PropertyRef Name="ID_KLUB" />
+      <PropertyRef Name="ID_POZYCJI" />
+    </Key>
+    <Property Name="ID_OSOBA" Type="int" Nullable="false" />
+    <Property Name="ID_MECZ" Type="int" Nullable="false" />
+    <Property Name="ID_KLUB" Type="int" Nullable="false" />
+    <Property Name="ID_POZYCJI" Type="int" Nullable="false" />
+    <Property Name="NUMER" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Stadions">
+    <Key>
+      <PropertyRef Name="ID_STADIONU" />
+    </Key>
+    <Property Name="ID_STADIONU" Type="int" Nullable="false" />
+    <Property Name="NAZWA_STADIONU" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="ROK_WYBUDOWANIA" Type="datetime" Nullable="true" />
+    <Property Name="POJEMNOSC" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Typ_zdarzenia">
+    <Key>
+      <PropertyRef Name="ID_TYPU_ZDARZENIA" />
+    </Key>
+    <Property Name="ID_TYPU_ZDARZENIA" Type="int" Nullable="false" />
+    <Property Name="NAZWA" Type="varchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Zawodniks">
+    <Key>
+      <PropertyRef Name="ID_OSOBA" />
+    </Key>
+    <Property Name="ID_OSOBA" Type="int" Nullable="false" />
+    <Property Name="WIEK" Type="int" Nullable="true" />
+    <Property Name="NAZWISKO" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="IMIE" Type="char" Nullable="true" MaxLength="50" />
+    <Property Name="KRAJ" Type="char" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Zdarzenies">
+    <Key>
+      <PropertyRef Name="ID_ZDARZENIA" />
+    </Key>
+    <Property Name="ID_ZDARZENIA" Type="int" Nullable="false" />
+    <Property Name="ID_MECZ" Type="int" Nullable="true" />
+    <Property Name="ID_TYPU_ZDARZENIA" Type="int" Nullable="false" />
+    <Property Name="ID_OSOBA" Type="int" Nullable="true" />
+    <Property Name="CZAS" Type="time" Nullable="true" Precision="7" />
+  </EntityType>
+  <EntityType Name="Sezon_rogrywki">
+    <Key>
+      <PropertyRef Name="KLUBs_ID_KLUB" />
+      <PropertyRef Name="Sezons_ID_SEZONU" />
+    </Key>
+    <Property Name="KLUBs_ID_KLUB" Type="int" Nullable="false" />
+    <Property Name="Sezons_ID_SEZONU" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Sedzia_na_mecz3">
+    <End Role="Funkcja_sedziowska" Type="RugbyModel.Store.Funkcja_sedziowska" Multiplicity="1" />
+    <End Role="Sedzia_na_mecz" Type="RugbyModel.Store.Sedzia_na_mecz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funkcja_sedziowska">
+        <PropertyRef Name="ID_FUNKCJI" />
+      </Principal>
+      <Dependent Role="Sedzia_na_mecz">
+        <PropertyRef Name="ID_FUNKCJI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gospodarz">
+    <End Role="KLUB" Type="RugbyModel.Store.KLUBs" Multiplicity="1" />
+    <End Role="Mecz" Type="RugbyModel.Store.Meczs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KLUB">
+        <PropertyRef Name="ID_KLUB" />
+      </Principal>
+      <Dependent Role="Mecz">
+        <PropertyRef Name="ID_KLUB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gość">
+    <End Role="KLUB" Type="RugbyModel.Store.KLUBs" Multiplicity="0..1" />
+    <End Role="Mecz" Type="RugbyModel.Store.Meczs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KLUB">
+        <PropertyRef Name="ID_KLUB" />
+      </Principal>
+      <Dependent Role="Mecz">
+        <PropertyRef Name="KLU_ID_KLUB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sklad_na_mecz3">
+    <End Role="KLUB" Type="RugbyModel.Store.KLUBs" Multiplicity="1" />
+    <End Role="Sklad_na_mecz" Type="RugbyModel.Store.Sklad_na_mecz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KLUB">
+        <PropertyRef Name="ID_KLUB" />
+      </Principal>
+      <Dependent Role="Sklad_na_mecz">
+        <PropertyRef Name="ID_KLUB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relationship_3">
+    <End Role="Mecz" Type="RugbyModel.Store.Meczs" Multiplicity="0..1" />
+    <End Role="Zdarzenie" Type="RugbyModel.Store.Zdarzenies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mecz">
+        <PropertyRef Name="ID_MECZ" />
+      </Principal>
+      <Dependent Role="Zdarzenie">
+        <PropertyRef Name="ID_MECZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relationship_7">
+    <End Role="Stadion" Type="RugbyModel.Store.Stadions" Multiplicity="0..1" />
+    <End Role="Mecz" Type="RugbyModel.Store.Meczs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stadion">
+        <PropertyRef Name="ID_STADIONU" />
+      </Principal>
+      <Dependent Role="Mecz">
+        <PropertyRef Name="ID_STADIONU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sedzia_na_mecz2">
+    <End Role="Mecz" Type="RugbyModel.Store.Meczs" Multiplicity="1" />
+    <End Role="Sedzia_na_mecz" Type="RugbyModel.Store.Sedzia_na_mecz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mecz">
+        <PropertyRef Name="ID_MECZ" />
+      </Principal>
+      <Dependent Role="Sedzia_na_mecz">
+        <PropertyRef Name="ID_MECZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sklad_na_mecz2">
+    <End Role="Mecz" Type="RugbyModel.Store.Meczs" Multiplicity="1" />
+    <End Role="Sklad_na_mecz" Type="RugbyModel.Store.Sklad_na_mecz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mecz">
+        <PropertyRef Name="ID_MECZ" />
+      </Principal>
+      <Dependent Role="Sklad_na_mecz">
+        <PropertyRef Name="ID_MECZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sklad_na_mecz4">
+    <End Role="Rodzaj_pozycji" Type="RugbyModel.Store.Rodzaj_pozycji" Multiplicity="1" />
+    <End Role="Sklad_na_mecz" Type="RugbyModel.Store.Sklad_na_mecz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rodzaj_pozycji">
+        <PropertyRef Name="ID_POZYCJI" />
+      </Principal>
+      <Dependent Role="Sklad_na_mecz">
+        <PropertyRef Name="ID_POZYCJI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sedzia_na_mecz">
+    <End Role="Sedzia" Type="RugbyModel.Store.Sedzias" Multiplicity="1" />
+    <End Role="Sedzia_na_mecz" Type="RugbyModel.Store.Sedzia_na_mecz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sedzia">
+        <PropertyRef Name="ID_OSOBA" />
+      </Principal>
+      <Dependent Role="Sedzia_na_mecz">
+        <PropertyRef Name="ID_OSOBA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sklad_na_mecz">
+    <End Role="Zawodnik" Type="RugbyModel.Store.Zawodniks" Multiplicity="1" />
+    <End Role="Sklad_na_mecz" Type="RugbyModel.Store.Sklad_na_mecz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zawodnik">
+        <PropertyRef Name="ID_OSOBA" />
+      </Principal>
+      <Dependent Role="Sklad_na_mecz">
+        <PropertyRef Name="ID_OSOBA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relationship_5">
+    <End Role="Typ_zdarzenia" Type="RugbyModel.Store.Typ_zdarzenia" Multiplicity="1" />
+    <End Role="Zdarzenie" Type="RugbyModel.Store.Zdarzenies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Typ_zdarzenia">
+        <PropertyRef Name="ID_TYPU_ZDARZENIA" />
+      </Principal>
+      <Dependent Role="Zdarzenie">
+        <PropertyRef Name="ID_TYPU_ZDARZENIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relationship_4">
+    <End Role="Zawodnik" Type="RugbyModel.Store.Zawodniks" Multiplicity="0..1" />
+    <End Role="Zdarzenie" Type="RugbyModel.Store.Zdarzenies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zawodnik">
+        <PropertyRef Name="ID_OSOBA" />
+      </Principal>
+      <Dependent Role="Zdarzenie">
+        <PropertyRef Name="ID_OSOBA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sezon_rogrywki_KLUB">
+    <End Role="KLUB" Type="RugbyModel.Store.KLUBs" Multiplicity="1" />
+    <End Role="Sezon_rogrywki" Type="RugbyModel.Store.Sezon_rogrywki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KLUB">
+        <PropertyRef Name="ID_KLUB" />
+      </Principal>
+      <Dependent Role="Sezon_rogrywki">
+        <PropertyRef Name="KLUBs_ID_KLUB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sezon_rogrywki_Sezon">
+    <End Role="Sezon_rogrywki" Type="RugbyModel.Store.Sezon_rogrywki" Multiplicity="*" />
+    <End Role="Sezon" Type="RugbyModel.Store.Sezons" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Sezon">
+        <PropertyRef Name="ID_SEZONU" />
+      </Principal>
+      <Dependent Role="Sezon_rogrywki">
+        <PropertyRef Name="Sezons_ID_SEZONU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RugbyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Funkcja_sedziowska">
+          <Key>
+            <PropertyRef Name="ID_FUNKCJI" />
+          </Key>
+          <Property Name="ID_FUNKCJI" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sedzia_na_mecz" Relationship="Self.FK_Sedzia_na_mecz3" FromRole="Funkcja_sedziowska" ToRole="Sedzia_na_mecz" />
+        </EntityType>
+        <EntityType Name="KLUB">
+          <Key>
+            <PropertyRef Name="ID_KLUB" />
+          </Key>
+          <Property Name="ID_KLUB" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_KLUBU" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="ROK_ZALOZENIA" Type="Int32" />
+          <NavigationProperty Name="Meczs" Relationship="Self.FK_Gospodarz" FromRole="KLUB" ToRole="Mecz" />
+          <NavigationProperty Name="Meczs1" Relationship="Self.FK_Gość" FromRole="KLUB" ToRole="Mecz" />
+          <NavigationProperty Name="Sklad_na_mecz" Relationship="Self.FK_Sklad_na_mecz3" FromRole="KLUB" ToRole="Sklad_na_mecz" />
+          <NavigationProperty Name="Sezons" Relationship="Self.Sezon_rogrywki" FromRole="KLUB" ToRole="Sezon" />
+        </EntityType>
+        <EntityType Name="Mecz">
+          <Key>
+            <PropertyRef Name="ID_MECZ" />
+          </Key>
+          <Property Name="ID_MECZ" Type="Int32" Nullable="false" />
+          <Property Name="ID_KLUB" Type="Int32" Nullable="false" />
+          <Property Name="ID_STADIONU" Type="Int32" />
+          <Property Name="KLU_ID_KLUB" Type="Int32" />
+          <Property Name="DATA_MECZU" Type="DateTime" Precision="0" />
+          <Property Name="MIEJSCOWOSC" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KLUB" Relationship="Self.FK_Gospodarz" FromRole="Mecz" ToRole="KLUB" />
+          <NavigationProperty Name="KLUB1" Relationship="Self.FK_Gość" FromRole="Mecz" ToRole="KLUB" />
+          <NavigationProperty Name="Zdarzenies" Relationship="Self.FK_Relationship_3" FromRole="Mecz" ToRole="Zdarzenie" />
+          <NavigationProperty Name="Stadion" Relationship="Self.FK_Relationship_7" FromRole="Mecz" ToRole="Stadion" />
+          <NavigationProperty Name="Sedzia_na_mecz" Relationship="Self.FK_Sedzia_na_mecz2" FromRole="Mecz" ToRole="Sedzia_na_mecz" />
+          <NavigationProperty Name="Sklad_na_mecz" Relationship="Self.FK_Sklad_na_mecz2" FromRole="Mecz" ToRole="Sklad_na_mecz" />
+        </EntityType>
+        <EntityType Name="Rodzaj_pozycji">
+          <Key>
+            <PropertyRef Name="ID_POZYCJI" />
+          </Key>
+          <Property Name="ID_POZYCJI" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sklad_na_mecz" Relationship="Self.FK_Sklad_na_mecz4" FromRole="Rodzaj_pozycji" ToRole="Sklad_na_mecz" />
+        </EntityType>
+        <EntityType Name="Sedzia">
+          <Key>
+            <PropertyRef Name="ID_OSOBA" />
+          </Key>
+          <Property Name="ID_OSOBA" Type="Int32" Nullable="false" />
+          <Property Name="WIEK" Type="Int32" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMIE" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="KRAJ" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Sedzia_na_mecz" Relationship="Self.FK_Sedzia_na_mecz" FromRole="Sedzia" ToRole="Sedzia_na_mecz" />
+        </EntityType>
+        <EntityType Name="Sedzia_na_mecz">
+          <Key>
+            <PropertyRef Name="ID_OSOBA" />
+            <PropertyRef Name="ID_MECZ" />
+            <PropertyRef Name="ID_FUNKCJI" />
+          </Key>
+          <Property Name="ID_OSOBA" Type="Int32" Nullable="false" />
+          <Property Name="ID_MECZ" Type="Int32" Nullable="false" />
+          <Property Name="ID_FUNKCJI" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Funkcja_sedziowska" Relationship="Self.FK_Sedzia_na_mecz3" FromRole="Sedzia_na_mecz" ToRole="Funkcja_sedziowska" />
+          <NavigationProperty Name="Mecz" Relationship="Self.FK_Sedzia_na_mecz2" FromRole="Sedzia_na_mecz" ToRole="Mecz" />
+          <NavigationProperty Name="Sedzia" Relationship="Self.FK_Sedzia_na_mecz" FromRole="Sedzia_na_mecz" ToRole="Sedzia" />
+        </EntityType>
+        <EntityType Name="Sezon">
+          <Key>
+            <PropertyRef Name="ID_SEZONU" />
+          </Key>
+          <Property Name="ID_SEZONU" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KLUBs" Relationship="Self.Sezon_rogrywki" FromRole="Sezon" ToRole="KLUB" />
+        </EntityType>
+        <EntityType Name="Sklad_na_mecz">
+          <Key>
+            <PropertyRef Name="ID_OSOBA" />
+            <PropertyRef Name="ID_MECZ" />
+            <PropertyRef Name="ID_KLUB" />
+            <PropertyRef Name="ID_POZYCJI" />
+          </Key>
+          <Property Name="ID_OSOBA" Type="Int32" Nullable="false" />
+          <Property Name="ID_MECZ" Type="Int32" Nullable="false" />
+          <Property Name="ID_KLUB" Type="Int32" Nullable="false" />
+          <Property Name="ID_POZYCJI" Type="Int32" Nullable="false" />
+          <Property Name="NUMER" Type="Int32" />
+          <NavigationProperty Name="KLUB" Relationship="Self.FK_Sklad_na_mecz3" FromRole="Sklad_na_mecz" ToRole="KLUB" />
+          <NavigationProperty Name="Mecz" Relationship="Self.FK_Sklad_na_mecz2" FromRole="Sklad_na_mecz" ToRole="Mecz" />
+          <NavigationProperty Name="Rodzaj_pozycji" Relationship="Self.FK_Sklad_na_mecz4" FromRole="Sklad_na_mecz" ToRole="Rodzaj_pozycji" />
+          <NavigationProperty Name="Zawodnik" Relationship="Self.FK_Sklad_na_mecz" FromRole="Sklad_na_mecz" ToRole="Zawodnik" />
+        </EntityType>
+        <EntityType Name="Stadion">
+          <Key>
+            <PropertyRef Name="ID_STADIONU" />
+          </Key>
+          <Property Name="ID_STADIONU" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_STADIONU" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ROK_WYBUDOWANIA" Type="DateTime" Precision="0" />
+          <Property Name="POJEMNOSC" Type="Int32" />
+          <NavigationProperty Name="Meczs" Relationship="Self.FK_Relationship_7" FromRole="Stadion" ToRole="Mecz" />
+        </EntityType>
+        <EntityType Name="Typ_zdarzenia">
+          <Key>
+            <PropertyRef Name="ID_TYPU_ZDARZENIA" />
+          </Key>
+          <Property Name="ID_TYPU_ZDARZENIA" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Zdarzenies" Relationship="Self.FK_Relationship_5" FromRole="Typ_zdarzenia" ToRole="Zdarzenie" />
+        </EntityType>
+        <EntityType Name="Zawodnik">
+          <Key>
+            <PropertyRef Name="ID_OSOBA" />
+          </Key>
+          <Property Name="ID_OSOBA" Type="Int32" Nullable="false" />
+          <Property Name="WIEK" Type="Int32" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMIE" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="KRAJ" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Sklad_na_mecz" Relationship="Self.FK_Sklad_na_mecz" FromRole="Zawodnik" ToRole="Sklad_na_mecz" />
+          <NavigationProperty Name="Zdarzenies" Relationship="Self.FK_Relationship_4" FromRole="Zawodnik" ToRole="Zdarzenie" />
+        </EntityType>
+        <EntityType Name="Zdarzenie">
+          <Key>
+            <PropertyRef Name="ID_ZDARZENIA" />
+          </Key>
+          <Property Name="ID_ZDARZENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_MECZ" Type="Int32" />
+          <Property Name="ID_TYPU_ZDARZENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_OSOBA" Type="Int32" />
+          <Property Name="CZAS" Type="Time" Precision="7" />
+          <NavigationProperty Name="Mecz" Relationship="Self.FK_Relationship_3" FromRole="Zdarzenie" ToRole="Mecz" />
+          <NavigationProperty Name="Typ_zdarzenia" Relationship="Self.FK_Relationship_5" FromRole="Zdarzenie" ToRole="Typ_zdarzenia" />
+          <NavigationProperty Name="Zawodnik" Relationship="Self.FK_Relationship_4" FromRole="Zdarzenie" ToRole="Zawodnik" />
+        </EntityType>
+        <Association Name="FK_Sedzia_na_mecz3">
+          <End Role="Funkcja_sedziowska" Type="Self.Funkcja_sedziowska" Multiplicity="1" />
+          <End Role="Sedzia_na_mecz" Type="Self.Sedzia_na_mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funkcja_sedziowska">
+              <PropertyRef Name="ID_FUNKCJI" />
+            </Principal>
+            <Dependent Role="Sedzia_na_mecz">
+              <PropertyRef Name="ID_FUNKCJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gospodarz">
+          <End Role="KLUB" Type="Self.KLUB" Multiplicity="1" />
+          <End Role="Mecz" Type="Self.Mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLUB">
+              <PropertyRef Name="ID_KLUB" />
+            </Principal>
+            <Dependent Role="Mecz">
+              <PropertyRef Name="ID_KLUB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gość">
+          <End Role="KLUB" Type="Self.KLUB" Multiplicity="0..1" />
+          <End Role="Mecz" Type="Self.Mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLUB">
+              <PropertyRef Name="ID_KLUB" />
+            </Principal>
+            <Dependent Role="Mecz">
+              <PropertyRef Name="KLU_ID_KLUB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklad_na_mecz3">
+          <End Role="KLUB" Type="Self.KLUB" Multiplicity="1" />
+          <End Role="Sklad_na_mecz" Type="Self.Sklad_na_mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLUB">
+              <PropertyRef Name="ID_KLUB" />
+            </Principal>
+            <Dependent Role="Sklad_na_mecz">
+              <PropertyRef Name="ID_KLUB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_3">
+          <End Role="Mecz" Type="Self.Mecz" Multiplicity="0..1" />
+          <End Role="Zdarzenie" Type="Self.Zdarzenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mecz">
+              <PropertyRef Name="ID_MECZ" />
+            </Principal>
+            <Dependent Role="Zdarzenie">
+              <PropertyRef Name="ID_MECZ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_7">
+          <End Role="Stadion" Type="Self.Stadion" Multiplicity="0..1" />
+          <End Role="Mecz" Type="Self.Mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stadion">
+              <PropertyRef Name="ID_STADIONU" />
+            </Principal>
+            <Dependent Role="Mecz">
+              <PropertyRef Name="ID_STADIONU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sedzia_na_mecz2">
+          <End Role="Mecz" Type="Self.Mecz" Multiplicity="1" />
+          <End Role="Sedzia_na_mecz" Type="Self.Sedzia_na_mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mecz">
+              <PropertyRef Name="ID_MECZ" />
+            </Principal>
+            <Dependent Role="Sedzia_na_mecz">
+              <PropertyRef Name="ID_MECZ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklad_na_mecz2">
+          <End Role="Mecz" Type="Self.Mecz" Multiplicity="1" />
+          <End Role="Sklad_na_mecz" Type="Self.Sklad_na_mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mecz">
+              <PropertyRef Name="ID_MECZ" />
+            </Principal>
+            <Dependent Role="Sklad_na_mecz">
+              <PropertyRef Name="ID_MECZ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklad_na_mecz4">
+          <End Role="Rodzaj_pozycji" Type="Self.Rodzaj_pozycji" Multiplicity="1" />
+          <End Role="Sklad_na_mecz" Type="Self.Sklad_na_mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rodzaj_pozycji">
+              <PropertyRef Name="ID_POZYCJI" />
+            </Principal>
+            <Dependent Role="Sklad_na_mecz">
+              <PropertyRef Name="ID_POZYCJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sedzia_na_mecz">
+          <End Role="Sedzia" Type="Self.Sedzia" Multiplicity="1" />
+          <End Role="Sedzia_na_mecz" Type="Self.Sedzia_na_mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sedzia">
+              <PropertyRef Name="ID_OSOBA" />
+            </Principal>
+            <Dependent Role="Sedzia_na_mecz">
+              <PropertyRef Name="ID_OSOBA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sklad_na_mecz">
+          <End Role="Zawodnik" Type="Self.Zawodnik" Multiplicity="1" />
+          <End Role="Sklad_na_mecz" Type="Self.Sklad_na_mecz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zawodnik">
+              <PropertyRef Name="ID_OSOBA" />
+            </Principal>
+            <Dependent Role="Sklad_na_mecz">
+              <PropertyRef Name="ID_OSOBA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_5">
+          <End Role="Typ_zdarzenia" Type="Self.Typ_zdarzenia" Multiplicity="1" />
+          <End Role="Zdarzenie" Type="Self.Zdarzenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Typ_zdarzenia">
+              <PropertyRef Name="ID_TYPU_ZDARZENIA" />
+            </Principal>
+            <Dependent Role="Zdarzenie">
+              <PropertyRef Name="ID_TYPU_ZDARZENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_4">
+          <End Role="Zawodnik" Type="Self.Zawodnik" Multiplicity="0..1" />
+          <End Role="Zdarzenie" Type="Self.Zdarzenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zawodnik">
+              <PropertyRef Name="ID_OSOBA" />
+            </Principal>
+            <Dependent Role="Zdarzenie">
+              <PropertyRef Name="ID_OSOBA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Sezon_rogrywki">
+          <End Role="KLUB" Type="Self.KLUB" Multiplicity="*" />
+          <End Role="Sezon" Type="Self.Sezon" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="RugbyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Funkcja_sedziowska" EntityType="Self.Funkcja_sedziowska" />
+          <EntitySet Name="KLUBs" EntityType="Self.KLUB" />
+          <EntitySet Name="Meczs" EntityType="Self.Mecz" />
+          <EntitySet Name="Rodzaj_pozycji" EntityType="Self.Rodzaj_pozycji" />
+          <EntitySet Name="Sedzias" EntityType="Self.Sedzia" />
+          <EntitySet Name="Sedzia_na_mecz" EntityType="Self.Sedzia_na_mecz" />
+          <EntitySet Name="Sezons" EntityType="Self.Sezon" />
+          <EntitySet Name="Sklad_na_mecz" EntityType="Self.Sklad_na_mecz" />
+          <EntitySet Name="Stadions" EntityType="Self.Stadion" />
+          <EntitySet Name="Typ_zdarzenia" EntityType="Self.Typ_zdarzenia" />
+          <EntitySet Name="Zawodniks" EntityType="Self.Zawodnik" />
+          <EntitySet Name="Zdarzenies" EntityType="Self.Zdarzenie" />
+          <AssociationSet Name="FK_Sedzia_na_mecz3" Association="Self.FK_Sedzia_na_mecz3">
+            <End Role="Funkcja_sedziowska" EntitySet="Funkcja_sedziowska" />
+            <End Role="Sedzia_na_mecz" EntitySet="Sedzia_na_mecz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gospodarz" Association="Self.FK_Gospodarz">
+            <End Role="KLUB" EntitySet="KLUBs" />
+            <End Role="Mecz" EntitySet="Meczs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gość" Association="Self.FK_Gość">
+            <End Role="KLUB" EntitySet="KLUBs" />
+            <End Role="Mecz" EntitySet="Meczs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklad_na_mecz3" Association="Self.FK_Sklad_na_mecz3">
+            <End Role="KLUB" EntitySet="KLUBs" />
+            <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_3" Association="Self.FK_Relationship_3">
+            <End Role="Mecz" EntitySet="Meczs" />
+            <End Role="Zdarzenie" EntitySet="Zdarzenies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_7" Association="Self.FK_Relationship_7">
+            <End Role="Stadion" EntitySet="Stadions" />
+            <End Role="Mecz" EntitySet="Meczs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sedzia_na_mecz2" Association="Self.FK_Sedzia_na_mecz2">
+            <End Role="Mecz" EntitySet="Meczs" />
+            <End Role="Sedzia_na_mecz" EntitySet="Sedzia_na_mecz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklad_na_mecz2" Association="Self.FK_Sklad_na_mecz2">
+            <End Role="Mecz" EntitySet="Meczs" />
+            <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklad_na_mecz4" Association="Self.FK_Sklad_na_mecz4">
+            <End Role="Rodzaj_pozycji" EntitySet="Rodzaj_pozycji" />
+            <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sedzia_na_mecz" Association="Self.FK_Sedzia_na_mecz">
+            <End Role="Sedzia" EntitySet="Sedzias" />
+            <End Role="Sedzia_na_mecz" EntitySet="Sedzia_na_mecz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sklad_na_mecz" Association="Self.FK_Sklad_na_mecz">
+            <End Role="Zawodnik" EntitySet="Zawodniks" />
+            <End Role="Sklad_na_mecz" EntitySet="Sklad_na_mecz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_5" Association="Self.FK_Relationship_5">
+            <End Role="Typ_zdarzenia" EntitySet="Typ_zdarzenia" />
+            <End Role="Zdarzenie" EntitySet="Zdarzenies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_4" Association="Self.FK_Relationship_4">
+            <End Role="Zawodnik" EntitySet="Zawodniks" />
+            <End Role="Zdarzenie" EntitySet="Zdarzenies" />
+          </AssociationSet>
+          <AssociationSet Name="Sezon_rogrywki" Association="Self.Sezon_rogrywki">
+            <End Role="KLUB" EntitySet="KLUBs" />
+            <End Role="Sezon" EntitySet="Sezons" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RugbyModelStoreContainer" CdmEntityContainer="RugbyEntities">
+    <EntitySetMapping Name="Funkcja_sedziowska">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Funkcja_sedziowska)">
+        <MappingFragment StoreEntitySet="Funkcja_sedziowska">
+          <ScalarProperty Name="ID_FUNKCJI" ColumnName="ID_FUNKCJI" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KLUBs">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.KLUB)">
+        <MappingFragment StoreEntitySet="KLUBs">
+          <ScalarProperty Name="ID_KLUB" ColumnName="ID_KLUB" />
+          <ScalarProperty Name="NAZWA_KLUBU" ColumnName="NAZWA_KLUBU" />
+          <ScalarProperty Name="ROK_ZALOZENIA" ColumnName="ROK_ZALOZENIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meczs">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Mecz)">
+        <MappingFragment StoreEntitySet="Meczs">
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_KLUB" ColumnName="ID_KLUB" />
+          <ScalarProperty Name="ID_STADIONU" ColumnName="ID_STADIONU" />
+          <ScalarProperty Name="KLU_ID_KLUB" ColumnName="KLU_ID_KLUB" />
+          <ScalarProperty Name="DATA_MECZU" ColumnName="DATA_MECZU" />
+          <ScalarProperty Name="MIEJSCOWOSC" ColumnName="MIEJSCOWOSC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rodzaj_pozycji">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Rodzaj_pozycji)">
+        <MappingFragment StoreEntitySet="Rodzaj_pozycji">
+          <ScalarProperty Name="ID_POZYCJI" ColumnName="ID_POZYCJI" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sedzias">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sedzia)">
+        <MappingFragment StoreEntitySet="Sedzias">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="WIEK" ColumnName="WIEK" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+          <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sedzia_na_mecz">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sedzia_na_mecz)">
+        <MappingFragment StoreEntitySet="Sedzia_na_mecz">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_FUNKCJI" ColumnName="ID_FUNKCJI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sezons">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sezon)">
+        <MappingFragment StoreEntitySet="Sezons">
+          <ScalarProperty Name="ID_SEZONU" ColumnName="ID_SEZONU" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sklad_na_mecz">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Sklad_na_mecz)">
+        <MappingFragment StoreEntitySet="Sklad_na_mecz">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_KLUB" ColumnName="ID_KLUB" />
+          <ScalarProperty Name="ID_POZYCJI" ColumnName="ID_POZYCJI" />
+          <ScalarProperty Name="NUMER" ColumnName="NUMER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stadions">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Stadion)">
+        <MappingFragment StoreEntitySet="Stadions">
+          <ScalarProperty Name="ID_STADIONU" ColumnName="ID_STADIONU" />
+          <ScalarProperty Name="NAZWA_STADIONU" ColumnName="NAZWA_STADIONU" />
+          <ScalarProperty Name="ROK_WYBUDOWANIA" ColumnName="ROK_WYBUDOWANIA" />
+          <ScalarProperty Name="POJEMNOSC" ColumnName="POJEMNOSC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Typ_zdarzenia">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Typ_zdarzenia)">
+        <MappingFragment StoreEntitySet="Typ_zdarzenia">
+          <ScalarProperty Name="ID_TYPU_ZDARZENIA" ColumnName="ID_TYPU_ZDARZENIA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zawodniks">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Zawodnik)">
+        <MappingFragment StoreEntitySet="Zawodniks">
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="WIEK" ColumnName="WIEK" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+          <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zdarzenies">
+      <EntityTypeMapping TypeName="IsTypeOf(RugbyModel.Zdarzenie)">
+        <MappingFragment StoreEntitySet="Zdarzenies">
+          <ScalarProperty Name="ID_ZDARZENIA" ColumnName="ID_ZDARZENIA" />
+          <ScalarProperty Name="ID_MECZ" ColumnName="ID_MECZ" />
+          <ScalarProperty Name="ID_TYPU_ZDARZENIA" ColumnName="ID_TYPU_ZDARZENIA" />
+          <ScalarProperty Name="ID_OSOBA" ColumnName="ID_OSOBA" />
+          <ScalarProperty Name="CZAS" ColumnName="CZAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Sezon_rogrywki" TypeName="RugbyModel.Sezon_rogrywki" StoreEntitySet="Sezon_rogrywki">
+      <EndProperty Name="KLUB">
+        <ScalarProperty Name="ID_KLUB" ColumnName="KLUBs_ID_KLUB" />
+      </EndProperty>
+      <EndProperty Name="Sezon">
+        <ScalarProperty Name="ID_SEZONU" ColumnName="Sezons_ID_SEZONU" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
