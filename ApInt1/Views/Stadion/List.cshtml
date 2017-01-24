@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ApInt1.Stadion>
+
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    Page.Title = "Index";
+}
+
+<!DOCTYPE html>
+<div class="title-gradient">
+    <h1>Stadiony</h1>
+</div>
+<html>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NAZWA_STADIONU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ROK_WYBUDOWANIA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.POJEMNOSC)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAZWA_STADIONU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROK_WYBUDOWANIA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.POJEMNOSC)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID_STADIONU }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID_STADIONU }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID_STADIONU })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

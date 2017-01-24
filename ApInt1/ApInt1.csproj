@@ -77,6 +77,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Npgsql, Version=3.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -197,9 +201,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StadionController.cs" />
+    <Compile Include="Controllers\ZawodnikController.cs" />
     <Compile Include="Funkcja_sedziowska.cs">
       <DependentUpon>RugbyModel.tt</DependentUpon>
     </Compile>
@@ -253,6 +257,24 @@
     <Compile Include="Typ_zdarzenia.cs">
       <DependentUpon>RugbyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>UserdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserdbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserdbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserdbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserdbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Zawodnik.cs">
       <DependentUpon>RugbyModel.tt</DependentUpon>
     </Compile>
@@ -261,6 +283,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Rugby.mdf" />
+    <Content Include="App_Data\Rugby_log.ldf">
+      <DependentUpon>Rugby.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Userdb.mdf" />
+    <Content Include="App_Data\Userdb_log.ldf">
+      <DependentUpon>Userdb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\main.css" />
@@ -270,16 +300,22 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\arrow_grey.png" />
+    <Content Include="images\Wiśniewski.jpg" />
+    <Content Include="images\Kowalski.jpg" />
     <Content Include="images\mail_icon.png" />
     <Content Include="images\main_photo.jpg" />
+    <Content Include="images\Nowak.jpg" />
     <Content Include="images\phone_icon.png" />
-    <Content Include="images\player.jpg" />
+    <Content Include="images\player4.jpg" />
+    <Content Include="images\player5.jpg" />
+    <Content Include="images\player6.jpg" />
     <Content Include="images\stadion.jpg" />
     <Content Include="RugbyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RugbyModel.edmx</DependentUpon>
       <LastGenOutput>RugbyModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="RugbyModel.edmx.sql" />
     <Content Include="RugbyModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RugbyModel.edmx</DependentUpon>
@@ -314,7 +350,19 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="UserdbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+      <LastGenOutput>UserdbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="UserdbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+      <LastGenOutput>UserdbModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -328,31 +376,37 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\FrontEnd.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Home\O_Nas.cshtml" />
+    <Content Include="Views\Home\Ligi.cshtml" />
+    <Content Include="Views\Home\Stadiony.cshtml" />
+    <Content Include="Views\Home\Tabela.cshtml" />
+    <Content Include="Views\Home\Terminarz.cshtml" />
+    <Content Include="Views\Zawodnik\Index.cshtml" />
+    <Content Include="Views\Zawodnik\Create.cshtml" />
+    <Content Include="Views\Zawodnik\Details.cshtml" />
+    <Content Include="Views\Zawodnik\Edit.cshtml" />
+    <Content Include="Views\Zawodnik\Delete.cshtml" />
+    <Content Include="Views\Zawodnik\List.cshtml" />
+    <EntityDeploy Include="UserdbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserdbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="UserdbModel.edmx.diagram">
+      <DependentUpon>UserdbModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\AfterLogin.cshtml" />
+    <Content Include="Views\Stadion\Create.cshtml" />
+    <Content Include="Views\Stadion\Delete.cshtml" />
+    <Content Include="Views\Stadion\Details.cshtml" />
+    <Content Include="Views\Stadion\Edit.cshtml" />
+    <Content Include="Views\Stadion\Index.cshtml" />
+    <Content Include="Views\Stadion\List.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

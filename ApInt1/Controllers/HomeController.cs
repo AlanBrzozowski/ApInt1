@@ -27,9 +27,73 @@ namespace ApInt1.Controllers
             return View();
         }
 
-        public ActionResult FrontEnd()
+        public ActionResult Ligi()
         {
             return View();
+        }
+
+        public ActionResult Stadiony()
+        {
+           // return View();
+            return RedirectToAction("List", "Stadion");
+        }
+
+        public ActionResult Zawodnicy()
+        {
+            //return View();
+            return RedirectToAction("List", "Zawodnik");
+        }
+
+        public ActionResult Tabela()
+        {
+            return View();
+        }
+
+        public ActionResult Terminarz()
+        {
+            return View();
+        }
+
+        public ActionResult O_Nas()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(User u)
+        {
+            if(ModelState.IsValid)
+            {
+                using (UserdbEntities dc = new UserdbEntities())
+                {
+                    var v = dc.Users.Where(a => a.Username.Equals(u.Username) && a.Password.Equals(u.Password)).FirstOrDefault();
+                    if(v != null)
+                    {
+                        Session["LogedUserID"] = v.UserID.ToString();
+                        Session["LogedUserFullname"] = v.FullName.ToString();
+                        return RedirectToAction("Create", "Zawodnik");
+                    }
+                }
+            }
+            return View(u);
+        }
+
+        public ActionResult AfterLogin()
+        {
+            if (Session["LogedUserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
     }
 }

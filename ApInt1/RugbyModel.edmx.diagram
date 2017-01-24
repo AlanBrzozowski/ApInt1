@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7d117d04687d4b5ba357e7cd68f893a1" Name="Diagram1">
+      <Diagram DiagramId="7d117d04687d4b5ba357e7cd68f893a1" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="RugbyModel.Funkcja_sedziowska" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RugbyModel.KLUB" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RugbyModel.Mecz" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />

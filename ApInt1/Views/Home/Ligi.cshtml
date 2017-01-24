@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    Page.Title = "Ligi";
+}
+
+<section class="leagues">
+    <div class="title-gradient">
+        <h1>Ligi</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="league-wrapper">
+                    <p class="name">Liga 1</p>
+                    <p>@Html.ActionLink("Tabela i wyniki", "Tabela", "Home", null, new { @class = "page-scroll" })</p>
+                    <p>@Html.ActionLink("Terminarz", "Terminarz", "Home", null, new { @class = "page-scroll" })</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="league-wrapper">
+                    <p class="name">Liga 2</p>
+                    <p>@Html.ActionLink("Tabela i wyniki", "Tabela", "Home", null, new { @class = "page-scroll" })</p>
+                    <p>@Html.ActionLink("Terminarz", "Terminarz", "Home", null, new { @class = "page-scroll" })</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="league-wrapper">
+                    <p class="name">Liga 3</p>
+                    <p>@Html.ActionLink("Tabela i wyniki", "Tabela", "Home", null, new { @class = "page-scroll" })</p>
+                    <p>@Html.ActionLink("Terminarz", "Terminarz", "Home", null, new { @class = "page-scroll" })</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="league-wrapper">
+                    <p class="name">Liga 4</p>
+                    <p>@Html.ActionLink("Tabela i wyniki", "Tabela", "Home", null, new { @class = "page-scroll" })</p>
+                    <p>@Html.ActionLink("Terminarz", "Terminarz", "Home", null, new { @class = "page-scroll" })</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
