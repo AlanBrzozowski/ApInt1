@@ -17,11 +17,11 @@ namespace ApInt1.Controllers
         // GET: Stadion
         public ActionResult Index()
         {
-            return View(db.Stadions.ToList());
+            return View(db.Stadion.ToList());
         }
         public ActionResult List()
         {
-            return View(db.Stadions.ToList());
+            return View(db.Stadion.ToList());
         }
 
         // GET: Stadion/Details/5
@@ -31,7 +31,7 @@ namespace ApInt1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Stadion stadion = db.Stadions.Find(id);
+            Stadion stadion = db.Stadion.Find(id);
             if (stadion == null)
             {
                 return HttpNotFound();
@@ -61,7 +61,7 @@ namespace ApInt1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Stadions.Add(stadion);
+                db.Stadion.Add(stadion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -76,7 +76,7 @@ namespace ApInt1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Stadion stadion = db.Stadions.Find(id);
+            Stadion stadion = db.Stadion.Find(id);
             if (stadion == null)
             {
                 return HttpNotFound();
@@ -107,7 +107,7 @@ namespace ApInt1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Stadion stadion = db.Stadions.Find(id);
+            Stadion stadion = db.Stadion.Find(id);
             if (stadion == null)
             {
                 return HttpNotFound();
@@ -120,8 +120,8 @@ namespace ApInt1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Stadion stadion = db.Stadions.Find(id);
-            db.Stadions.Remove(stadion);
+            Stadion stadion = db.Stadion.Find(id);
+            db.Stadion.Remove(stadion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

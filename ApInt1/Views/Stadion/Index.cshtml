@@ -1,45 +1,59 @@
 ﻿@model IEnumerable<ApInt1.Stadion>
 
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NAZWA_STADIONU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ROK_WYBUDOWANIA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.POJEMNOSC)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NAZWA_STADIONU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ROK_WYBUDOWANIA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.POJEMNOSC)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_STADIONU }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_STADIONU }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_STADIONU })
-        </td>
-    </tr>
-}
-
-</table>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NAZWA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MIASTO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.POJEMNOSC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klub.NAZWA)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAZWA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MIASTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.POJEMNOSC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Klub.NAZWA)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID_STADION }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID_STADION }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID_STADION })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

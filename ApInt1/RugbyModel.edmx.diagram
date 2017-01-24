@@ -4,33 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7d117d04687d4b5ba357e7cd68f893a1" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="RugbyModel.Funkcja_sedziowska" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.KLUB" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Mecz" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Rodzaj_pozycji" Width="1.5" PointX="6" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Sedzia" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Sedzia_na_mecz" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Sezon" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Sklad_na_mecz" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Stadion" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Typ_zdarzenia" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Zawodnik" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RugbyModel.Zdarzenie" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="RugbyModel.FK_Sedzia_na_mecz3" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Gospodarz" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Gość" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Sklad_na_mecz3" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Relationship_3" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Relationship_7" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Sedzia_na_mecz2" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Sklad_na_mecz2" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Sklad_na_mecz4" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Sedzia_na_mecz" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Sklad_na_mecz" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Relationship_5" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.FK_Relationship_4" ManuallyRouted="false" />
-        <AssociationConnector Association="RugbyModel.Sezon_rogrywki" ManuallyRouted="false" />
+      <Diagram DiagramId="c386308c4fb341529b5192d139f884be" Name="Diagram1">
+        <EntityTypeShape EntityType="RugbyModel.Klub" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugbyModel.Kolejka" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugbyModel.Liga" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugbyModel.Mecz" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugbyModel.Stadion" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugbyModel.Zawodnik" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugbyModel.Zdarzenie" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
+        <AssociationConnector Association="RugbyModel.FK_gosc" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_gospodarz" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_klub" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_stadion" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_zawodnik" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_zdarzenie" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_kolejka" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_mecz" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_mecz2" ManuallyRouted="false" />
+        <AssociationConnector Association="RugbyModel.FK_zdarzenie2" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

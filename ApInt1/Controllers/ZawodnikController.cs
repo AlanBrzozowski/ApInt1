@@ -13,19 +13,19 @@ namespace ApInt1.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Zawodniks.ToList());
+            return View(db.Zawodnik.ToList());
         }
 
         public ActionResult List()
         {
-            return View(db.Zawodniks.ToList());
+            return View(db.Zawodnik.ToList());
         }
 
         public ActionResult Details(int? id)
         {
             if(id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            Zawodnik zawodnik = db.Zawodniks.Find(id);
+            Zawodnik zawodnik = db.Zawodnik.Find(id);
             if (zawodnik == null)
                 return HttpNotFound();
             return View(zawodnik);
@@ -36,7 +36,7 @@ namespace ApInt1.Controllers
         {
             if (id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            Zawodnik zawodnik = db.Zawodniks.Find(id);
+            Zawodnik zawodnik = db.Zawodnik.Find(id);
             if (zawodnik == null)
                 return HttpNotFound();
             return View(zawodnik);
@@ -47,7 +47,7 @@ namespace ApInt1.Controllers
         {
             if (id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            Zawodnik zawodnik = db.Zawodniks.Find(id);
+            Zawodnik zawodnik = db.Zawodnik.Find(id);
             if (zawodnik == null)
                 return HttpNotFound();
             return View(zawodnik);
@@ -70,7 +70,7 @@ namespace ApInt1.Controllers
         {
             if(ModelState.IsValid)
             {
-                db.Zawodniks.Add(zawodnik);
+                db.Zawodnik.Add(zawodnik);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -97,10 +97,10 @@ namespace ApInt1.Controllers
             {
                 if (id == null)
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                zawodnik = db.Zawodniks.Find(id);
+                zawodnik = db.Zawodnik.Find(id);
                 if (zawodnik == null)
                     return HttpNotFound();
-                db.Zawodniks.Remove(zawodnik);
+                db.Zawodnik.Remove(zawodnik);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
