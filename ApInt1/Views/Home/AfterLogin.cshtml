@@ -4,11 +4,12 @@
     Layout = "~/Views/Shared/_EditLayout.cshtml";
 }
 
-<h2>AfterLogin</h2>
+<h2>
 
-@if (Session["LogedUserFullname"] !=null)
-{
-    <text>
-        Welcome @Session["LogedUserFullname"].ToString()
-    </text>
-}
+    @if (Session["LogedUserFullname"] != null)
+    {
+        <text>
+            Welcome @Session["LogedUserFullname"].ToString()
+        </text>
+    }
+</h2>
