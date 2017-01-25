@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ApInt1.Klub>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NAZWA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Liga.NAZWA)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAZWA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Liga.NAZWA)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID_KLUB }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID_KLUB }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID_KLUB })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

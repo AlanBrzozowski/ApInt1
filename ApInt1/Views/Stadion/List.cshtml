@@ -2,7 +2,7 @@
 
 @{
     Layout = "~/Views/Shared/_MainLayout.cshtml";
-    Page.Title = "Index";
+    Page.Title = "List";
 }
 <div class="title-gradient">
     <h1>Stadiony</h1>
@@ -25,7 +25,13 @@
                             Nazwa: @Html.DisplayFor(modelItem => item.NAZWA)
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus officia amet hic accusamus repellat magni reprehenderit dolorem, ex earum modi commodi unde
+                            Miasto: @Html.DisplayFor(modelItem => item.MIASTO)
+                        </p>
+                        <p>
+                            Pojemność: @Html.DisplayFor(modelItem => item.POJEMNOSC)
+                        </p>
+                        <p>
+                            Klub: @Html.DisplayFor(modelItem => item.Klub.NAZWA)
                         </p>
                     </div>
                 </div>

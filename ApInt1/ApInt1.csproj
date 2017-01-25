@@ -202,6 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KlubController.cs" />
     <Compile Include="Controllers\StadionController.cs" />
     <Compile Include="Controllers\ZawodnikController.cs" />
     <Compile Include="Global.asax.cs">
@@ -386,6 +387,15 @@
     <Content Include="Views\Home\AfterLogin.cshtml" />
     <Content Include="Views\Stadion\Index.cshtml" />
     <Content Include="Views\Stadion\List.cshtml" />
+    <Content Include="Views\Stadion\Details.cshtml" />
+    <Content Include="Views\Stadion\Create.cshtml" />
+    <Content Include="Views\Stadion\Edit.cshtml" />
+    <Content Include="Views\Stadion\Delete.cshtml" />
+    <Content Include="Views\Klub\Create.cshtml" />
+    <Content Include="Views\Klub\Delete.cshtml" />
+    <Content Include="Views\Klub\Details.cshtml" />
+    <Content Include="Views\Klub\Edit.cshtml" />
+    <Content Include="Views\Klub\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

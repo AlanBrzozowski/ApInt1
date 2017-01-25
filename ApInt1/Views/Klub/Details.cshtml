@@ -1,0 +1,42 @@
+﻿@model ApInt1.Klub
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Klub</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NAZWA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NAZWA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Liga.NAZWA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Liga.NAZWA)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_KLUB }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
