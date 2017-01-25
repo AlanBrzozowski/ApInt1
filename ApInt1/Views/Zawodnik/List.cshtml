@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<ApInt1.Zawodnik>
-
 @{
     Layout = "~/Views/Shared/_MainLayout.cshtml";
     Page.Title = "Index";
 }
-
 <div class="title-gradient">
     <h1>Zawodnicy</h1>
 </div>
-
 
 @foreach (var item in Model)
 {
@@ -24,10 +21,19 @@
                     <div class="member-info">
                         <p class="name">@Html.DisplayFor(modelItem => item.IMIE) @Html.DisplayFor(modelItem => item.NAZWISKO)</p>
                         <p>
-                            Wiek: @Html.DisplayFor(modelItem => item.WIEK)
+                            Imie: @Html.DisplayFor(modelItem => item.IMIE)
                         </p>
                         <p>
-                            Kraj: @Html.DisplayFor(modelItem => item.KRAJ)
+                            Nazwisko: @Html.DisplayFor(modelItem => item.NAZWISKO)
+                        </p>
+                        <p>
+                            Data urodzenia: @Html.DisplayFor(modelItem => item.DATA_URODZENIA)
+                        </p>
+                        <p>
+                            Kraj: @Html.DisplayFor(modelItem => item.NARODOWOSC)
+                        </p>
+                        <p>
+                            Klub: @Html.DisplayFor(modelItem => item.Klub.NAZWA)
                         </p>
                     </div>
                 </div>
@@ -35,3 +41,5 @@
         </div>
     </div>
 }
+
+

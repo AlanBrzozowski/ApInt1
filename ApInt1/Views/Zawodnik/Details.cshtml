@@ -1,50 +1,66 @@
 ﻿@model ApInt1.Zawodnik
 
 @{
-    ViewBag.Title = "Details";
+    Layout = null;
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
 
-<div>
-    <h4>Zawodnik</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.WIEK)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WIEK)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NAZWISKO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NAZWISKO)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IMIE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IMIE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.KRAJ)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.KRAJ)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_OSOBA }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Zawodnik</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.IMIE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IMIE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NAZWISKO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NAZWISKO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DATA_URODZENIA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DATA_URODZENIA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NARODOWOSC)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NARODOWOSC)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Klub.NAZWA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Klub.NAZWA)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_ZAWODNIK }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

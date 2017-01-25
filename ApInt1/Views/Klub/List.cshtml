@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ApInt1.Klub>
+
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    Page.Title = "List";
+}
+
+<div class="title-gradient">
+    <h1>Kluby</h1>
+</div>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="team-member">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="member-info">
+                        <p class="name">Nazwa klubu</p>
+                        <p>
+                            Nazwa: @Html.DisplayFor(modelItem => item.NAZWA)
+                        </p>
+                        <p>
+                            Nazwa ligi: @Html.DisplayFor(modelItem => item.Liga.NAZWA)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

@@ -47,13 +47,25 @@ namespace ApInt1.Controllers
 
         public ActionResult Zawodnicy()
         {
-            //return View();
-            return RedirectToAction("List", "Zawodnik");
+            if (Session["LogedUserID"] != null)
+            {
+                return RedirectToAction("Index", "Zawodnik");
+            }
+            else
+            {
+                return RedirectToAction("List", "Zawodnik");
+            }
         }
         public ActionResult Kluby()
         {
-            //return View();
-            return RedirectToAction("List", "Klub");
+            if (Session["LogedUserID"] != null)
+            {
+                return RedirectToAction("Index", "Klub");
+            }
+            else
+            {
+                return RedirectToAction("List", "Klub");
+            }
         }
 
         public ActionResult Tabela()
@@ -89,7 +101,7 @@ namespace ApInt1.Controllers
                     {
                         Session["LogedUserID"] = v.UserID.ToString();
                         Session["LogedUserFullname"] = v.FullName.ToString();
-                        return RedirectToAction("O_Nas", "Home");
+                        return RedirectToAction("AfterLogin");
                     }
                 }
             }

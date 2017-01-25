@@ -20,6 +20,11 @@ namespace ApInt1.Controllers
             var klub = db.Klub.Include(k => k.Liga);
             return View(klub.ToList());
         }
+        public ActionResult List()
+        {
+            var klub = db.Klub.Include(k => k.Liga);
+            return View(db.Klub.ToList());
+        }
 
         // GET: Klub/Details/5
         public ActionResult Details(int? id)

@@ -359,9 +359,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_MainLayout.cshtml" />
@@ -370,12 +367,6 @@
     <Content Include="Views\Home\Stadiony.cshtml" />
     <Content Include="Views\Home\Tabela.cshtml" />
     <Content Include="Views\Home\Terminarz.cshtml" />
-    <Content Include="Views\Zawodnik\Index.cshtml" />
-    <Content Include="Views\Zawodnik\Create.cshtml" />
-    <Content Include="Views\Zawodnik\Details.cshtml" />
-    <Content Include="Views\Zawodnik\Edit.cshtml" />
-    <Content Include="Views\Zawodnik\Delete.cshtml" />
-    <Content Include="Views\Zawodnik\List.cshtml" />
     <EntityDeploy Include="UserdbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserdbModel.Designer.cs</LastGenOutput>
@@ -383,10 +374,8 @@
     <Content Include="UserdbModel.edmx.diagram">
       <DependentUpon>UserdbModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\AfterLogin.cshtml" />
     <Content Include="Views\Stadion\Index.cshtml" />
-    <Content Include="Views\Stadion\List.cshtml" />
     <Content Include="Views\Stadion\Details.cshtml" />
     <Content Include="Views\Stadion\Create.cshtml" />
     <Content Include="Views\Stadion\Edit.cshtml" />
@@ -396,6 +385,16 @@
     <Content Include="Views\Klub\Details.cshtml" />
     <Content Include="Views\Klub\Edit.cshtml" />
     <Content Include="Views\Klub\Index.cshtml" />
+    <Content Include="Views\Klub\List.cshtml" />
+    <Content Include="Views\Stadion\List.cshtml" />
+    <Content Include="Views\Zawodnik\Create.cshtml" />
+    <Content Include="Views\Zawodnik\Delete.cshtml" />
+    <Content Include="Views\Zawodnik\Details.cshtml" />
+    <Content Include="Views\Zawodnik\Edit.cshtml" />
+    <Content Include="Views\Zawodnik\Index.cshtml" />
+    <Content Include="Views\Zawodnik\List.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_EditLayout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

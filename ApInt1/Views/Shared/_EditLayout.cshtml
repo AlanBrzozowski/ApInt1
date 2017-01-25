@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel edycji</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link href="@Href("~/Content/main.css")" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo-wrapper">
+                <p>I3A2S1</p>
+            </div>
+            <div class="logo-description">
+                <p>Wspomagamy rozgrywki rugby!</p>
+            </div>
+        </div>
+        <div class="menu-wrapper">
+            <ul>
+                <li>@Html.ActionLink("Ligi", "Ligi", "Home")</li>
+                <li>@Html.ActionLink("Zawodnicy", "Index", "Zawodnik")</li>
+                <li>@Html.ActionLink("Stadiony", "Index", "Stadion")</li>
+                <li>@Html.ActionLink("Kluby", "Index", "Klub")</li>
+            </ul>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <div class="top-footer">
+            <h2>Zostaw nam swojego maila aby być na bieżąco</h2>
+            <div class="newsletter-wrapper">
+                <form>
+                    <input type="text" placeholder="Wpisz swój e-mail">
+                    <button>Wyślij</button>
+                </form>
+            </div>
+            <p class="form-description">DZIĘKI</p>
+        </div>
+        <div class="bottom-wrapper">
+            <div class="blue-footer">
+                <div class="container">
+                    <div class="contact-data phone">
+                        <p>+48 666 666 666</p>
+                    </div>
+                    <div class="contact-data mail">
+                        <p><a href="mailto:test@test.com">test@test.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="black-footer">
+                <div class="container">
+                    <div class="rights-wrapper">
+                        <p>I3A2S1 | Wszystkie prawa zastrzeżone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

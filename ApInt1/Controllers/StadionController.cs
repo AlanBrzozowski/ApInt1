@@ -17,10 +17,13 @@ namespace ApInt1.Controllers
         // GET: Stadion
         public ActionResult Index()
         {
-            return View(db.Stadion.ToList());
+            var stadion = db.Stadion.Include(s => s.Klub);
+            return View(stadion.ToList());
         }
+
         public ActionResult List()
         {
+            var klub = db.Klub.Include(k => k.Liga);
             return View(db.Stadion.ToList());
         }
 
@@ -42,14 +45,8 @@ namespace ApInt1.Controllers
         // GET: Stadion/Create
         public ActionResult Create()
         {
-            if (Session["LogedUserID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
+            ViewBag.ID_KLUB = new SelectList(db.Klub, "ID_KLUB", "NAZWA");
+            return View();
         }
 
         // POST: Stadion/Create
@@ -57,7 +54,7 @@ namespace ApInt1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_STADIONU,NAZWA_STADIONU,ROK_WYBUDOWANIA,POJEMNOSC")] Stadion stadion)
+        public ActionResult Create([Bind(Include = "ID_STADION,ID_KLUB,NAZWA,MIASTO,POJEMNOSC")] Stadion stadion)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +63,7 @@ namespace ApInt1.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ID_KLUB = new SelectList(db.Klub, "ID_KLUB", "NAZWA", stadion.ID_KLUB);
             return View(stadion);
         }
 
@@ -81,6 +79,7 @@ namespace ApInt1.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ID_KLUB = new SelectList(db.Klub, "ID_KLUB", "NAZWA", stadion.ID_KLUB);
             return View(stadion);
         }
 
@@ -89,7 +88,7 @@ namespace ApInt1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_STADIONU,NAZWA_STADIONU,ROK_WYBUDOWANIA,POJEMNOSC")] Stadion stadion)
+        public ActionResult Edit([Bind(Include = "ID_STADION,ID_KLUB,NAZWA,MIASTO,POJEMNOSC")] Stadion stadion)
         {
             if (ModelState.IsValid)
             {
@@ -97,6 +96,7 @@ namespace ApInt1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ID_KLUB = new SelectList(db.Klub, "ID_KLUB", "NAZWA", stadion.ID_KLUB);
             return View(stadion);
         }
 

@@ -1,58 +1,62 @@
 ﻿@model IEnumerable<ApInt1.Zawodnik>
-
 @{
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 @if (Session["LogedUserFullname"] != null)
 {
-<div class="title-gradient">
-    <h1>Zawodnicy - Panel Edycji</h1>
-</div>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.WIEK)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NAZWISKO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IMIE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KRAJ)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <div class="title-gradient">
+        <h1>Zawodnicy - Panel Edycji</h1>
+    </div>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.WIEK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NAZWISKO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IMIE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KRAJ)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID_OSOBA }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID_OSOBA }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID_OSOBA })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.IMIE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAZWISKO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DATA_URODZENIA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NARODOWOSC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klub.NAZWA)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IMIE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NAZWISKO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DATA_URODZENIA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NARODOWOSC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Klub.NAZWA)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_ZAWODNIK }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_ZAWODNIK }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_ZAWODNIK })
+                </td>
+            </tr>
+        }
+    </table>
 }
 else
 {
