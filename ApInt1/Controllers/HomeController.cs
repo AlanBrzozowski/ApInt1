@@ -29,6 +29,18 @@ namespace ApInt1.Controllers
 
         public ActionResult Ligi()
         {
+            if (Session["LogedUserID"] != null)
+            {
+                return RedirectToAction("Ligi2", "Home");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Ligi2()
+        {
             return View();
         }
 

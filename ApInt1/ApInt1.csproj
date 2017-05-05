@@ -395,6 +395,7 @@
     <Content Include="Views\Zawodnik\List.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_EditLayout.cshtml" />
+    <Content Include="Views\Home\Ligi2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
